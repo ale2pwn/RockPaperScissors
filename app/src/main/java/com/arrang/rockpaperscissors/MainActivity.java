@@ -1,4 +1,4 @@
-package com.arrang1.rockpaperscissors;
+package com.arrang.rockpaperscissors;
 
 import android.app.ProgressDialog;
 import android.support.v7.app.AppCompatActivity;
