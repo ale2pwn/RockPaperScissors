@@ -4,7 +4,9 @@ import android.app.ProgressDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.TextView;
+import android.widget.ImageView;
 import android.view.View;
 import java.util.Random;
 
@@ -13,10 +15,11 @@ import java.util.Random;
 
 public class MainActivity extends AppCompatActivity {
     private ProgressDialog progress;
-    Button brock, bpaper, bscissor;
-    TextView userchoice, matchupchoice, results;
-    TextView userpic, matchuppic, versuspic;
-    TextView banner;
+    ImageButton brock, bpaper, bscissor;
+    ImageView userchoice, matchupchoice;
+    ImageView results;
+    TextView useranswer, matchupanswer;
+
 
 
     @Override
@@ -27,29 +30,30 @@ public class MainActivity extends AppCompatActivity {
         brock = findViewById(R.id.buttonRock);
         bpaper = findViewById(R.id.buttonPaper);
         bscissor = findViewById(R.id.buttonScissors);
-        userchoice = findViewById(R.id.textViewUserAnswer);
-        matchupchoice = findViewById(R.id.textViewMatchup);
+        userchoice = findViewById(R.id.imageViewUserPicture);
+        matchupchoice = findViewById(R.id.imageViewMatchupPicture);
         results = findViewById(R.id.textViewStatus);
-        banner = findViewById(R.id.textViewtop);
+        useranswer = findViewById(R.id.textViewUserAnswer);
+        matchupanswer = findViewById(R.id.textViewMatchup);
 
         brock.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v){
 
-                userchoice.setText("Rock");
+                useranswer.setText("Rock");
                 battle("Rock");
             }
         });
         bpaper.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v){
 
-                userchoice.setText("Paper");
+                useranswer.setText("Paper");
                 battle("Paper");
             }
         });
         bscissor.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v){
 
-                userchoice.setText("Scissors");
+                useranswer.setText("Scissors");
                 battle("Scissors");
             }
         });
@@ -58,49 +62,70 @@ public class MainActivity extends AppCompatActivity {
         String opponentAnswer = getRandom();
 
         if (yourAnswer.equals("Rock")){
+            userchoice.setImageResource(R.drawable.rockfigurepic);
             switch(opponentAnswer){
                 case "Rock":
-                    results.setText("Draw");
+                    //results.setText("Draw");
+                    results.setImageResource(R.drawable.drawiconfixed);
+                    matchupchoice.setImageResource(R.drawable.rockfigurepic);
                     break;
 
                 case "Paper":
-                    results.setText("Lose");
+                    //results.setText("Lose");
+                    results.setImageResource(R.drawable.youloseiconfix);
+                    matchupchoice.setImageResource(R.drawable.paperfigurepic);
                     break;
 
                 case "Scissors":
-                    results.setText("Win");
+                    //results.setText("Win");
+                    results.setImageResource(R.drawable.youwinicon);
+                    matchupchoice.setImageResource(R.drawable.scissorsfigurepic);
                     break;
 
             }
         }
         else if (yourAnswer.equals("Paper")){
+            userchoice.setImageResource(R.drawable.paperfigurepic);
             switch(opponentAnswer){
                 case "Rock":
-                    results.setText("Win");
+                    //results.setText("Win");
+                    results.setImageResource(R.drawable.youwinicon);
+                    matchupchoice.setImageResource(R.drawable.rockfigurepic);
                     break;
 
                 case "Paper":
-                    results.setText("Draw");
+                    //results.setText("Draw");
+                    results.setImageResource(R.drawable.drawiconfixed);
+                    matchupchoice.setImageResource(R.drawable.paperfigurepic);
                     break;
 
                 case "Scissors":
-                    results.setText("Lose");
+                    //results.setText("Lose");
+                    results.setImageResource(R.drawable.youloseiconfix);
+                    matchupchoice.setImageResource(R.drawable.scissorsfigurepic);
                     break;
 
             }
         }
         else if (yourAnswer.equals("Scissors")){
+            userchoice.setImageResource(R.drawable.scissorsfigurepic);
             switch(opponentAnswer){
                 case "Rock":
-                    results.setText("Lose");
+                    //results.setText("Lose");
+                    results.setImageResource(R.drawable.youloseiconfix);
+                    matchupchoice.setImageResource(R.drawable.rockfigurepic);
                     break;
 
                 case "Paper":
-                    results.setText("Win");
+                    //results.setText("Win");
+                    results.setImageResource(R.drawable.youwinicon);
+                    matchupchoice.setImageResource(R.drawable.paperfigurepic);
                     break;
 
                 case "Scissors":
-                    results.setText("Draw");
+                    //results.setText("Draw");
+                    results.setImageResource(R.drawable.drawiconfixed);
+                    matchupchoice.setImageResource(R.drawable.scissorsfigurepic);
                     break;
 
             }
@@ -121,7 +146,8 @@ public class MainActivity extends AppCompatActivity {
         else if(random == 2){
             randomAnswer = "Scissors";
         }
-        matchupchoice.setText(randomAnswer);
+        //matchupchoice.setText(randomAnswer);
+        matchupanswer.setText(randomAnswer);
         return randomAnswer;
     }
 }

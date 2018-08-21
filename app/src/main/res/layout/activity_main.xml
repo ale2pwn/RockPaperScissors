@@ -10,21 +10,23 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
-        android:weightSum="10">
+        android:weightSum="10"
+        android:background="@drawable/background">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:background="#FF0000"
+            android:background="#FFFFFF"
             android:orientation="horizontal"
             android:layout_gravity="center"
             android:layout_weight="3">
 
-            <TextView
+            <ImageView
                 android:id="@+id/textViewtop"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Banner/Score Holder" />
+                android:text="Banner/Score Holder"
+                android:src = "@drawable/banner"/>
         </LinearLayout>
 
         <LinearLayout
@@ -39,9 +41,11 @@
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="3"
-                android:text="Your Answer" />
+                android:text="Your Answer"
+                android:textSize="32dp"
+                android:textColor="#FFFFFF"/>
 
-            <TextView
+            <ImageView
                 android:id="@+id/textViewStatus"
                 android:layout_width="0dp"
                 android:layout_weight="1"
@@ -52,7 +56,9 @@
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="3"
-                android:text="Opponent Answer" />
+                android:text="Opponent Answer"
+                android:textSize="32dp"
+                android:textColor="#FFFFFF"/>
         </LinearLayout>
 
         <LinearLayout
@@ -62,22 +68,23 @@
             android:weightSum="7"
             android:orientation="horizontal">
 
-            <TextView
-                android:id="@+id/textViewUserPicture"
+            <ImageView
+                android:id="@+id/imageViewUserPicture"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="3"
                 android:text="UserChoice Picture" />
 
-            <TextView
-                android:id="@+id/textViewVersus"
+            <ImageView
+                android:id="@+id/imageViewVersus"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:text="Versus Picture" />
+                android:text="Versus Picture"
+                android:src="@drawable/versusicon"/>
 
-            <TextView
-                android:id="@+id/textViewMatchupPicture"
+            <ImageView
+                android:id="@+id/imageViewMatchupPicture"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="3"
@@ -92,29 +99,29 @@
             android:background="#FFFF00"
             android:orientation="horizontal">
 
-            <Button
+            <ImageButton
                 android:id="@+id/buttonRock"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:background="#FFFFFF"
-                android:text="@string/rock" />
+                android:src = "@drawable/rockicon" />
 
-            <Button
+            <ImageButton
                 android:id="@+id/buttonPaper"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:background="#FFFFFF"
-                android:text="@string/paper" />
+                android:src = "@drawable/papericon" />
 
-            <Button
+            <ImageButton
                 android:id="@+id/buttonScissors"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:background="#FFFFFF"
-                android:text="@string/scissors" />
+                android:src = "@drawable/scissoricon" />
         </LinearLayout>
     </LinearLayout>
 
